@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root{
+    --gold-1: #D4AF37;
+    --gold-2: #F5D78E;
+    --gold-3: #E6C77A;
+    --gold-4: #C9A227;
+    --gold-5: #A67C00;
+    --bg-1: #121212;
+    --bg-2: #1F1F1F;
+    --bg-3: #2A2A2A;
+    --glass-opa: 0.12;
+  }
+
+  body { background: linear-gradient(180deg,var(--bg-1),var(--bg-2)); color: #f6f2ec; font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
+  a { color: var(--gold-1); }
+}
+
+html { scroll-behavior: smooth; }
+
+/* Buttons */
+.btn-primary { @apply inline-flex items-center gap-2 px-5 py-2 rounded-md text-black font-semibold shadow-lg transition-all duration-300 ease-out; background: linear-gradient(90deg,var(--gold-2),var(--gold-1)); box-shadow: 0 6px 24px rgba(212,175,55,0.18); }
+.btn-primary:hover, .btn-primary:focus-visible { transform: translateY(-3px); box-shadow: 0 12px 46px rgba(212,175,55,0.28); background: linear-gradient(90deg,var(--gold-1),var(--gold-2)); }
+.btn-ghost { @apply inline-flex items-center gap-2 px-4 py-2 rounded-md text-gray-200 border transition-all duration-300 ease-out; border-image: linear-gradient(90deg,var(--gold-3),transparent) 1; background: rgba(255,255,255,0.02); }
+.btn-ghost:hover, .btn-ghost:focus-visible { color: #fff; background: rgba(212,175,55,0.14); transform: translateY(-2px); border-color: rgba(212,175,55,0.4); }
+
+/* Glass and glow */
+.glow { box-shadow: 0 10px 40px rgba(212,175,55,0.14), inset 0 1px 0 rgba(255,255,255,0.02); }
+
+/* Gradient animation */
+.animated-gradient { background: linear-gradient(90deg, var(--gold-2), var(--gold-1), var(--gold-3)); background-size: 300% 300%; animation: gradientMove 8s ease infinite; }
+@keyframes gradientMove { 0% { background-position: 0% 50% } 50% { background-position: 100% 50% } 100% { background-position: 0% 50% } }
+
+/* Particles container sizing */
+#tsparticles { width: 100%; height: 100%; }
+
+/* Glassmorphism */
+.glass { background: rgba(255,255,255,var(--glass-opa)); border: 1px solid rgba(255,255,255,0.04); backdrop-filter: blur(6px); }
+
+/* Gold border */
+.gold-border { border-radius: 12px; box-shadow: 0 6px 30px rgba(0,0,0,0.6); border: 1px solid rgba(212,175,55,0.18); background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.15)); }
+
+/* Subtle metallic sheen */
+.metal-sheen { background-image: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.06) 35%, rgba(0,0,0,0) 60%); }
+
+.header { @apply bg-transparent backdrop-blur-sm flex justify-between items-center px-6 h-16; border-bottom: 1px solid rgba(255,255,255,0.03); }
+.header nav a { color: var(--gold-1); margin-left: .75rem; opacity: 0.95; }
+.main { @apply p-6 pt-20; }
+.games-grid { display: grid; gap: 1.5rem; grid-template-columns: repeat(1, minmax(0, 1fr)); }
+@media (min-width: 640px) { .games-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1280px) { .games-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.game-card { }
+.thumb { @apply w-28 h-16 object-cover rounded; }
+.game-info h3 { @apply m-0 text-lg font-semibold; color: #fff; }
+.game-info p { @apply mt-1 text-sm; color: #cfc6b6; }
+.cta-chip { @apply inline-flex items-center justify-center rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#BDBDBD] transition duration-300 ease-out; }
+.cta-chip:hover { background: rgba(212,175,55,0.12); color: #fff; box-shadow: 0 12px 30px rgba(212,175,55,0.18); }
+.game-detail .cover { @apply max-w-full h-auto rounded; }
+.store-links a { @apply inline-block mr-3; color: var(--gold-2); }
+.footer { @apply p-6 text-center; border-top: 1px solid rgba(255,255,255,0.03); }
+
+/* Headings with gold accent */
+.section-title { font-size: 1.5rem; font-weight: 700; background: linear-gradient(90deg,var(--gold-2),var(--gold-1)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+/* Hover card effect */
+.card-hover { transition: transform .35s cubic-bezier(.2,.9,.2,1), box-shadow .35s; }
+.card-hover:hover { transform: translateY(-8px); box-shadow: 0 30px 80px rgba(0,0,0,0.6), 0 4px 20px rgba(212,175,55,0.12); }
+
+/* Small utility for gold glow */
+.gold-glow { box-shadow: 0 8px 40px rgba(212,175,55,0.16); }
+
+/* Scroll hint */
+.scroll-hint { display: inline-flex; flex-direction: column; align-items: center; gap: 0.5rem; color: #d4bf71; text-transform: uppercase; letter-spacing: 0.18em; opacity: 0.85; }
