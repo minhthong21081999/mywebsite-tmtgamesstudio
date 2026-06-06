@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "mywebsite-tmtgamesstudio"
-  }
+    "default": "mywebsite-tmtgamesstudio",
+    "production": "tmt-games-studio"
+  },
+  "targets": {},
+  "etags": {}
 }
